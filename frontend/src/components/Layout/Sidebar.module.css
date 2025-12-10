@@ -1,0 +1,20 @@
+.sider {
+  background-color: var(--theme-bg);
+  border-right: 1px solid var(--theme-border);
+}
+
+.sider :global(.ant-menu) {
+  background-color: var(--theme-bg);
+}
+
+.sider :global(.ant-menu-item-selected) {
+  background-color: var(--theme-primary) !important;
+}
+
+.sider :global(.ant-menu-item-selected a) {
+  color: var(--theme-primary-text) !important;
+}
+
+.sider :global(.ant-menu-item-selected span) {
+  color: var(--theme-primary-text) !important;
+}

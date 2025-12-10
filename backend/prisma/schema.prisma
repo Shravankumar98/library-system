@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  borrowings BorrowRecord[]
+
+  @@map("users")
+}
+
+model Author {
+  id        Int     @id @default(autoincrement())
+  name      String
+  bio       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  books Book[]
+
+  @@map("authors")
+}
+
+model Book {
+  id          Int     @id @default(autoincrement())
+  title       String
+  isbn        String  @unique
+  description String?
+  authorId    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  author     Author       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  borrowings BorrowRecord[]
+
+  @@map("books")
+}
+
+model BorrowRecord {
+  id         Int     @id @default(autoincrement())
+  userId     Int
+  bookId     Int
+  borrowedAt DateTime @default(now())
+  returnedAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  book Book @relation(fields: [bookId], references: [id], onDelete: Cascade)
+
+  @@map("borrow_records")
+}

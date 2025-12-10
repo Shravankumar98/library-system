@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f4f4 0%, #ffffff 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 16px rgba(1, 135, 144, 0.15);
+  border: 1px solid #00b7b5;
+}
+
+.card :global(.ant-card-head) {
+  background: linear-gradient(135deg, #018790 0%, #005461 100%);
+  border-color: #00b7b5;
+}
+
+.card :global(.ant-card-head .ant-card-head-title) {
+  color: white;
+  font-weight: 600;
+}
+
+.card :global(.ant-form-item-label > label) {
+  color: #005461;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card :global(.ant-input),
+.card :global(.ant-input-password) {
+  border: 1px solid #00b7b5;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.card :global(.ant-input:hover),
+.card :global(.ant-input-password:hover) {
+  border-color: #018790;
+  box-shadow: 0 0 0 2px rgba(0, 183, 181, 0.1);
+}
+
+.card :global(.ant-input:focus),
+.card :global(.ant-input-password:focus) {
+  border-color: #018790 !important;
+  box-shadow: 0 0 0 3px rgba(1, 135, 144, 0.2);
+}
+
+.card :global(.ant-btn-primary) {
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #018790;
+  border-color: #018790;
+  transition: all 0.3s ease;
+}
+
+.card :global(.ant-btn-primary:hover) {
+  background-color: #005461;
+  border-color: #005461;
+  box-shadow: 0 4px 12px rgba(0, 84, 97, 0.3);
+}
+
+.card :global(.ant-btn-primary:focus) {
+  background-color: #00b7b5;
+  border-color: #00b7b5;
+}

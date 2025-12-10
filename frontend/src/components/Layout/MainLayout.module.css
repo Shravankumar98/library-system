@@ -1,0 +1,29 @@
+.layout {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.bodyLayout {
+  margin-top: 0;
+}
+
+.content {
+  margin: 24px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggleButton {
+  display: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .toggleButton {
+    display: block;
+  }
+}
